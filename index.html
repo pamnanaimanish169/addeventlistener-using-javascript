@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id='button'>Click Me to change background color to red!</button>
+    <button id='reset_button'>Click Me to change the background color to default!</button>
+    <!-- BLur Effect -->
+    Blur Effect in Javascript
+    <div id="blur_effect__div">
+        <strong>Northwest</strong>
+        <br> Metal
+        <br> Silver
+        <br> Elders
+    </div>
+</body>
+
+<script>
+    let button = document.getElementById('button');
+
+    button.addEventListener('click', myFunction);
+    function myFunction() {
+        document.body.style.backgroundColor = 'red';
+    }
+
+    let resetButton = document.getElementById('reset_button')
+
+    resetButton.addEventListener('click', resetFunction);
+    function resetFunction() {
+        document.body.style.backgroundColor = 'white';
+    }
+
+    let blur_effect__div = document.getElementById('blur_effect__div');
+    let textarea;
+
+    blur_effect__div.addEventListener('click', focusFunction)
+
+    function focusFunction() {
+        let stringBeforeBlur = blur_effect__div.innerHTML.toString();
+        blur_effect__div.innerHTML = '<textarea></textarea>'
+        let textarea = blur_effect__div.getElementsByTagName('textarea');
+        textarea[0].style.height = '100px'
+        textarea[0].style.width = '100px'
+        textarea[0].innerHTML = stringBeforeBlur;
+    }
+    
+</script>
+</html>
